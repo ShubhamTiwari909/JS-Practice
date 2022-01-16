@@ -6,7 +6,7 @@ newSet.add(i);
 }
 console.log(newSet);
 console.log(typeof(newSet));
-
+// console.log(newSet.values());
 
 
 //JS Map
