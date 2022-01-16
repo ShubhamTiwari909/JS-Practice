@@ -65,3 +65,29 @@ class Car{
 
 const myCar = new Car("Mustang");
 Car.display(myCar);
+
+
+//polymorphism
+class Order{
+    constructor(){
+        
+    }
+    display(){
+        console.log("Order class is invoked");
+    }
+    
+}
+
+class Menu{
+    constructor(){
+
+    }
+    display(){
+        console.log("Menu class is invoked");
+    }
+}
+
+const x = [new Order(), new Menu()];
+x.forEach((msg) => {
+    msg.display();
+});

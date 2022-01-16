@@ -56,3 +56,60 @@ function resolveAfter2Seconds() {
   }
 
   parallel()
+
+
+
+function timeoutPromise(interval){
+    return new Promise((resolve , reject) => {
+        setTimeout(() => {
+            resolve("Set timeout function!!");
+            console.log("done")
+        }, interval);
+    })
+}
+
+
+async function timeOut(){
+    const timeInterval1 = timeoutPromise(3000);
+    const timeInterval2 = timeoutPromise(5000);
+    const timeInterval3 = timeoutPromise(7000);
+
+    const result = Promise.all([timeInterval1,timeInterval2,timeInterval3]);
+    return result;
+    // await timeInterval1;
+    // await timeInterval2;
+    // await timeInterval3;
+}
+
+let start = Date.now();
+
+timeOut().then(() => {
+    let end = Date.now();
+    let timeTaken = end - start;
+    console.log(timeTaken);
+}).catch((err) => {
+    console.log(err);
+});
+
+
+
+
+//class based function
+class SuperHero{
+    constructor(name,age,powers){
+        this.name = name;
+        this.age = age;
+        this.powers = powers;
+    }
+
+    async display(){
+        return await setTimeout(() => {
+            Promise.resolve("done");
+            console.log(`Name: ${this.name} , Age: ${this.age} , Power: ${this.powers} `)
+        }, 9000);
+    }
+}
+
+const superhero = new SuperHero("Superman",1000,"Flying and Heat vision");
+
+superhero.display().then(console.log);
