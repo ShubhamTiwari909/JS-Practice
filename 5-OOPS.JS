@@ -24,7 +24,7 @@ class User extends Order{
 }
 
 
-//getters and setters
+//getters and setters - encapsulation
 class Student{
     constructor(id,name,course){
         this.id = id;
@@ -69,19 +69,15 @@ Car.display(myCar);
 
 //polymorphism
 class Order{
-    constructor(){
-        
-    }
+   
     display(){
         console.log("Order class is invoked");
     }
     
 }
 
-class Menu{
-    constructor(){
-
-    }
+class Menu extends Order{
+   
     display(){
         console.log("Menu class is invoked");
     }
