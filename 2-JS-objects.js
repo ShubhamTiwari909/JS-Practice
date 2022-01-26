@@ -24,7 +24,7 @@ const Obj1 = {
     course:"BCA",
     age:20,
     email:"shubhmtiwri00@gmail.com",
-    fullname: function(){
+    fullname(){
         return this.firstname + " " + this.lastname;
     }
 
@@ -117,3 +117,35 @@ console.log(Person1.name());
 //object.defineProperty
 Object.defineProperty(Obj4,"semester",{ value:5});
 console.log(Obj4.semester);
+
+
+//object destructuring
+const obj1 = {name : "Shubham", age : 20, course : "BCA", year : "3rd", jobStatus : "Web Developer"};
+const { name, age, course, year, jobStatus } = obj1;
+
+console.log(name , age , course, year , jobStatus);
+
+
+// using variable as a key
+let orderNo = 1 , orderName = "Burger" , price = 35;
+
+const bill = {
+    orderNo,
+    orderName,
+    price
+}
+console.log(bill)
+
+
+//assigning variable name to the values
+const {orderNo : Sno, orderName : Food} = bill;
+console.log(Sno + " " + Food)
+
+
+//Using Rest parameters 
+let languages = {lang1 : "Javascript", lang2 : "PHP", lang3 : "Mysql", lang4 : "Python"}
+
+let {lang1 , ...langs} = languages;
+console.log(lang1);
+console.log(langs);
+
